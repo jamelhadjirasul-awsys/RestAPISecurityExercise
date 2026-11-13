@@ -115,7 +115,9 @@ public class AuthenticationController {
      * @return a message and HTTP status describing the login result
      */
     @PostMapping("/auth_login")
-    public ResponseEntity<String> login(@RequestBody AuthLoginDto authLoginDto) {
+    public ResponseEntity<String> login(
+                                    @RequestBody AuthLoginDto authLoginDto) {
+                                        
         Authentication authenticate = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(
                     authLoginDto.getUsername(), authLoginDto.getPassword()));
