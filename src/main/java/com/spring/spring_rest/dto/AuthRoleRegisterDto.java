@@ -23,7 +23,4 @@ public class AuthRoleRegisterDto {
     public void setName(String name) {
         this.name = name;
     }
-
-    
-
 }

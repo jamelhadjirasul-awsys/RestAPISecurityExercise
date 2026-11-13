@@ -38,6 +38,7 @@ public class StudentServiceImplement implements StudentService {
 
         Student theStudent = StudentMapper.mapToStudent(theStudentDto);
         Student savedStudent = studentRepo.save(theStudent);
+        
         return StudentMapper.mapToStudentDto(savedStudent);
     }
 
@@ -80,6 +81,7 @@ public class StudentServiceImplement implements StudentService {
         student.setEmail(theStudentDto.getEmail());
 
         Student savedStudent = studentRepo.save(student);
+        
         return StudentMapper.mapToStudentDto(savedStudent);
     }
 
@@ -107,6 +109,7 @@ public class StudentServiceImplement implements StudentService {
         }
 
         Student savedStudent = studentRepo.save(student);
+        
         return StudentMapper.mapToStudentDto(savedStudent);
     }
 
@@ -120,5 +123,4 @@ public class StudentServiceImplement implements StudentService {
     
         studentRepo.deleteById(theId);
     }
-
 }

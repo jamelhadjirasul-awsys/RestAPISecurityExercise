@@ -30,9 +30,9 @@ public class Auth_User {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "authusers_authroles", 
                 joinColumns=@JoinColumn(
-                    name="authusers_id", referencedColumnName="id"),
+                name="authusers_id", referencedColumnName="id"),
                 inverseJoinColumns=@JoinColumn(
-                    name="authrole_id", referencedColumnName="id"))
+                name="authrole_id", referencedColumnName="id"))
 
     private List<Auth_Role> roles = new ArrayList<>();
 

@@ -45,8 +45,8 @@ public class StudentExceptionHandler {
      */
     @ExceptionHandler 
     public ResponseEntity<StudentErrorResponse> handleException (Exception ex){
-            StudentErrorResponse err = new StudentErrorResponse();
-
+        
+        StudentErrorResponse err = new StudentErrorResponse();
         err.setStatus(HttpStatus.BAD_REQUEST.value());
         err.setMessage("Invalid data. Only integers are accepted");
         err.setTimeStamp(System.currentTimeMillis());
@@ -65,7 +65,6 @@ public class StudentExceptionHandler {
             MethodArgumentNotValidException ex) {
 
         Map<String, String> err = new HashMap<>();
-    
         ex.getBindingResult().getFieldErrors().forEach(error -> {
             err.put(error.getField(), error.getDefaultMessage());
         });
@@ -107,5 +106,4 @@ public class StudentExceptionHandler {
 
         return new ResponseEntity<>(err, HttpStatus.UNAUTHORIZED);
     }
-
 }

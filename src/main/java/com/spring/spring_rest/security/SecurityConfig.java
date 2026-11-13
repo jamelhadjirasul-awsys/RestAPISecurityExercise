@@ -61,6 +61,7 @@ public class SecurityConfig {
      * @return a BCrypt password encoder
      */
     BCryptPasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 
@@ -74,6 +75,7 @@ public class SecurityConfig {
      */
     AuthenticationManager authenticationManager
             (AuthenticationConfiguration authentication) throws Exception {
+
         return authentication.getAuthenticationManager();
     }
 
@@ -83,6 +85,7 @@ public class SecurityConfig {
      * @return the user details service
      */
     public CustomUserDetailsService getUserDetailsService() {
+        
         return userDetailsService;
     }
 
@@ -96,6 +99,4 @@ public class SecurityConfig {
 
         this.userDetailsService = userDetailsService;
     }
-
-    
 }

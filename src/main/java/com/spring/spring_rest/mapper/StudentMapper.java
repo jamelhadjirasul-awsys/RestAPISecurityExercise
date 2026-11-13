@@ -15,10 +15,10 @@ public class StudentMapper {
      * @return the corresponding student DTO
      */
     public static StudentDto mapToStudentDto(Student theStudent) {
-        return new StudentDto(theStudent.getId(), 
-                    theStudent.getFirstName(), 
-                    theStudent.getLastName(),
-                    theStudent.getEmail());
+        return new StudentDto (theStudent.getId(), 
+                                theStudent.getFirstName(),
+                                theStudent.getLastName(),
+                                theStudent.getEmail());
     }
 
     /**

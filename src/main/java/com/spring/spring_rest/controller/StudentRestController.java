@@ -45,6 +45,7 @@ public class StudentRestController {
                 @RequestBody StudentDto theStudentDto) {
 
         StudentDto savedStudent = studentService.createStudent(theStudentDto);
+
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }
 
@@ -56,7 +57,8 @@ public class StudentRestController {
      */
     @GetMapping("{id}")
     public ResponseEntity<StudentDto> getStudentById(@PathVariable Long id) {
-                StudentDto studentDto = studentService.getStudentById(id);
+        
+        StudentDto studentDto = studentService.getStudentById(id);
 
         return ResponseEntity.ok(studentDto);
     }
@@ -68,7 +70,8 @@ public class StudentRestController {
      */
     @GetMapping 
     public ResponseEntity<List<StudentDto>> getAllStudents() {
-                List<StudentDto> students = studentService.getAllStudents();
+        
+        List<StudentDto> students = studentService.getAllStudents();
 
         return ResponseEntity.ok(students);
     }
@@ -102,6 +105,7 @@ public class StudentRestController {
                 @Valid @RequestBody StudentDto theStudentDto) {
 
         StudentDto studentDto = studentService.patchStudent(id, theStudentDto);
+
         return ResponseEntity.ok(studentDto);
     }
 
@@ -113,7 +117,9 @@ public class StudentRestController {
      */
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteStudentById(@PathVariable Long id) {
+        
         studentService.deleteStudentById(id);
+
         return ResponseEntity.ok("Student deleted successfully!");
     }
 }

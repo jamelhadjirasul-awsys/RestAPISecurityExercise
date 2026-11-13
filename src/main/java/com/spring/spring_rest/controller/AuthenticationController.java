@@ -69,7 +69,6 @@ public class AuthenticationController {
         }
         Auth_Role auth_role = new Auth_Role();
         auth_role.setName(authRoleRegisterDto.getName());
-
         authRoleRepo.save(auth_role);
 
         return new ResponseEntity<>(auth_role.getName() 
@@ -117,7 +116,7 @@ public class AuthenticationController {
     @PostMapping("/auth_login")
     public ResponseEntity<String> login(
                                     @RequestBody AuthLoginDto authLoginDto) {
-                                        
+
         Authentication authenticate = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(
                     authLoginDto.getUsername(), authLoginDto.getPassword()));
