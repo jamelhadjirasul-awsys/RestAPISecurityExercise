@@ -72,7 +72,8 @@ public class StudentServiceImplement implements StudentService {
         Student student = studentRepo.findById(theId).orElseThrow(() -> 
         new StudentNotFoundException("Student id " + theId + " not found!"));
 
-        if (studentRepo.existsByEmailAndIdNot(theStudentDto.getEmail(), theId)) {
+        if (studentRepo.existsByEmailAndIdNot(
+                theStudentDto.getEmail(), theId)) {
             throw new AlreadyExistingEmailException("Email already exists.");
         }
 
